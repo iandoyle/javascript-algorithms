@@ -1,7 +1,7 @@
-import LinkedListNode from './LinkedListNode';
-import Comparator from '../../utils/comparator/Comparator';
+const LinkedListNode = require('./LinkedListNode');
+const Comparator = require('../../utils/comparator/Comparator');
 
-export default class LinkedList {
+module.exports = class LinkedList {
   /**
    * @param {Function} [comparatorFunction]
    */
@@ -205,7 +205,9 @@ export default class LinkedList {
    * @return {string}
    */
   toString(callback) {
-    return this.toArray().map(node => node.toString(callback)).toString();
+    return this.toArray()
+      .map(node => node.toString(callback))
+      .toString();
   }
 
   /**
@@ -235,4 +237,4 @@ export default class LinkedList {
 
     return this;
   }
-}
+};
